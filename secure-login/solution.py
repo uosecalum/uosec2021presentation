@@ -2,7 +2,7 @@ from pwn import *
 import sys
 
 context.log_level="critical"
-target = "ec2-3-129-16-183.us-east-2.compute.amazonaws.com"
+target = "uosec.canihax.com"
 port = 5000
 
 
