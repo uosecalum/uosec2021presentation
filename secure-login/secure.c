@@ -8,7 +8,6 @@ int main(int argc, char * argv[]) {
 	size_t bufsize = 0;
 	ssize_t guess_size = 0;
 	guess_size = getline(&buf, &bufsize, stdin);
-	printf("test enter\n");
 	if (guess_size > 33) {
 		puts("Whoa, we said secure passphrase, not super secure, who uses a password over 32 chars I mean really now.\n");
 		return -1;
