@@ -10,6 +10,7 @@ int main(int argc, char * argv[]) {
 	guess_size = getline(&buf, &bufsize, stdin);
 	if (guess_size > 33) {
 		puts("Whoa, we said secure passphrase, not super secure, who uses a password over 32 chars I mean really now.\n");
+		free(buf);
 		return -1;
 	}
 	if (buf[guess_size-1] == '\n') {
@@ -18,6 +19,7 @@ int main(int argc, char * argv[]) {
 	int guess = strcmp(buf, "f8a9da56bc463ca06ebcde0cde409196");
 	if (guess == 0) {
 		printf("flag{uosec_rip_kb}.\n");
+		free(buf);
 		return 0;
 	}
 	else if (guess < 0 && guess > -10) {
@@ -35,5 +37,6 @@ int main(int argc, char * argv[]) {
 	else {
 		printf("Maybe these numbers mean something? hmmm %d.\n", guess);
 	}
+	free(buf);
 	return 0;
 }
