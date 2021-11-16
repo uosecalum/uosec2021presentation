@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Challenge 2</title>
+		<script>
+			var update_output = function(inputstr) {
+				var ifrm = document.getElementById('output');
+				ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+				ifrm.document.open();
+				ifrm.document.write(inputstr);
+				ifrm.document.close();
+			}
+			var send_query = function() {
+				var inputstr = document.getElementById('input').value;
+				if (inputstr == '') {
+					inputstr = 'https://uocyb.github.io/';
+				}
+				
+				var req = new XMLHttpRequest();
+				req.open("POST", "/grabpage?endpoint=" + inputstr, false);
+				req.send();
+				console.log('API Response: ' + req.responseText);
+				update_output(req.responseText);
+			}
+		</script>
+	</head>
+	<body style="width: 67%;">
+		<h1>Challenge 2</h1>
+		<p>
+			
+		</p>
+		<input type="textbox" id="input"><label>URL to Get</label></input><br />
+		<button onclick="send_query();"><label>Grab Page</label></button>
+		<div>
+			<h2>Output:</h2>
+			<iframe id="output" style="width: 100%;"></iframe>
+		</div>
+		<div id="extra"></div>
+	</body>
+</html>

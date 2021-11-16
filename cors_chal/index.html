@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Challenge 1</title>
+		<script>
+			var update_output = function(inputstr) {
+				var textbox = document.getElementById('output');
+				var current_data = textbox.value;
+				current_data += inputstr;
+				textbox.value = current_data;
+			}
+			var send_query = function() {
+				var req = new XMLHttpRequest();
+				req.open("POST", "/query", false);
+				req.send();
+				console.log('API Response: ' + req.responseText);
+				update_output(req.responseText);
+			}
+		</script>
+	</head>
+	<body style="width: 67%;" onload="document.getElementById('output').value = '';">
+		<h1>Challenge 1</h1>
+		<p>
+			This challenge comes with an API, but the API's rate-limits have gotten a bit too strict.
+			Press the button to see what's going on, and try to figure out how to defeat this restriction 
+			by running code from your web browser's console while still on this page.
+		</p>
+		<button onclick="send_query();"><label>Run Query</label></button>
+		<div>
+			<h2>Output:</h2>
+			<textarea id="output" cols="120" rows="6" style="overflow-y: scroll;"></textarea>
+		</div>
+		<div id='extra'></div>
+	</body>
+</html>
