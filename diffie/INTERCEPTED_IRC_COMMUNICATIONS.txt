@@ -1,0 +1,16 @@
+INTERCEPTED IRC COMMUNICATIONS
+2021-11-11T09:45:07Z
+
+Alice: 	Bob can you send me that code again? I lost it :(
+Bob: 	Seriously? You're asking me to send you secrets on IRC? The whole world is gonna see! O_O
+Alice: 	Obviously not over plaintext, just encrypt it with Diffie.exe and then send me the file. :P
+Bob: 	Oh yeah that makes a lot more sense. Sorry I get excited. >_>
+Alice: 	It's OK. Just let me know when you're ready.
+Bob: 	Ready
+Alice: 	Let's do 208003 and 207999.
+Bob: 	Got it.
+Bob:	64488
+Alice: 	61337
+Bob: 	Alright flag.enc is on our usual pastebin.
+Alice: 	Decrypted. Thanks Bob :)
+Bob: 	No problem ^_^
